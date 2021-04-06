@@ -1,4 +1,4 @@
-name: 'Install Swift package'
+name: 'Mint: Swift package installer'
 description: 'Installs a Swift package using the Mint installer'
 branding:
   icon: package
