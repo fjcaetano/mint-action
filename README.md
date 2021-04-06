@@ -18,10 +18,10 @@ The version of Mint to be installed. Unused if Mint is already installed
 
 Add the step to your workflow:
 ```yaml
-- name: Install JohnSundell/Splash
+- name: Install fjcaetano/mint-action-test-package
   uses: fjcaetano/mint-action
   with:
-    package: JohnSundell/Splash@0.15
+    package: fjcaetano/mint-action-test-package
 ```
 
 You can refer to [.github/workflows/main.yml](.github/workflows/main.yml) as an example configuration. Feel free to check the [latest builds](https://github.com/fjcaetano/mint-action/actions) too.

@@ -4,14 +4,14 @@ jobs:
   install-splash:
     runs-on: ubuntu-latest
     container: swift:5.2
-    name: '[ubuntu] Install JohnSundell/Splash'
+    name: '[ubuntu] Install fjcaetano/mint-action-test-package'
     steps:
     - uses: actions/checkout@v2
 
     - name: Install and run mint
       uses: ./
       with:
-        package: JohnSundell/Splash
+        package: fjcaetano/mint-action-test-package@main
 
     - name: Test installation
-      run: which SplashMarkdown
+      run: mint-test
