@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  install-splash:
+  test-ubuntu:
     runs-on: ubuntu-latest
     container: swift:5.2
     name: '[ubuntu] Install fjcaetano/mint-action-test-package'
@@ -12,6 +12,21 @@ jobs:
       uses: ./
       with:
         package: fjcaetano/mint-action-test-package@main
+
+    - name: Test installation
+      run: mint-test
+
+  test-macos:
+    runs-on: macos-latest
+    name: '[macOS] Install fjcaetano/mint-action-test-package'
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install and run mint
+      uses: ./
+      with:
+        package: fjcaetano/mint-action-test-package@main
+        mint-version: 0.16.0
 
     - name: Test installation
       run: mint-test
