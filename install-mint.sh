@@ -1,6 +1,9 @@
 #! /bin/bash
 
-VERSION=$1
+VERSION="$1"
+PREFIX="/usr/local"
+INSTALL_PATH="${PREFIX}/bin/${EXECUTABLE_NAME}"
+BUILD_PATH=".build/release/mint"
 
 if [[ ! $(which mint) ]]; then
   echo "Installing mint ${VERSION}"
@@ -21,12 +24,20 @@ if [[ ! $(which mint) ]]; then
 
   echo
   echo "# Installing Mint"
-  make
+  swift build --disable-sandbox -c release
+	mkdir -p "${PREFIX}/bin"
+	cp -f "${BUILD_PATH}" "${INSTALL_PATH}"
 
   echo
   echo "# Cleaning up"
   cd ..
   rm -rf Mint
+
+  echo
+  echo "# Checking installation and exiting"
+  which mint
+  exit $?
 else
   echo "Mint already installed"
+  exit 0
 fi
