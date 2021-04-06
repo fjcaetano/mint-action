@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  install-splash:
+    runs-on: ubuntu-latest
+    container: swift:5.2
+    name: '[ubuntu] Install JohnSundell/Splash'
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install and run mint
+      uses: ./
+      with:
+        package: JohnSundell/Splash
+
+    - name: Test installation
+      run: which SplashMarkdown

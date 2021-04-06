@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/install-mint.sh ${{ inputs.mint-version }}
+    - run: ./install-mint.sh ${{ inputs.mint-version }}
       shell: bash
-    - run: mint ${{ inputs.package }}
+    - run: mint install ${{ inputs.package }}
       shell: bash
