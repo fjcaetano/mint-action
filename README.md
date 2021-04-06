@@ -1,4 +1,4 @@
-Github Action: mint ![macos]
+Github Action: mint ![CI Badge] ![macos | ubuntu]
 ======
 
 Installs a Swift package using the [Mint] package manager.
@@ -28,6 +28,6 @@ You can refer to [.github/workflows/main.yml](.github/workflows/main.yml) as an 
 
 <!-- Links -->
 
-[CI Badge]: TODO
-[macos]: https://img.shields.io/badge/platform-macos-lightgrey
+[CI Badge]: https://github.com/fjcaetano/mint-action/actions/workflows/main.yml/badge.svg?branch=main
+[macos | ubuntu]: https://img.shields.io/badge/platform-macos%20%7C%20ubuntu-lightgrey
 [Mint]: https://github.com/yonaskolb/Mint
